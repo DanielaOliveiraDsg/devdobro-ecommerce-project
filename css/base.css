@@ -1,6 +1,12 @@
+:root {
+    --dark-color: #111111;
+    --light-color: #ffffff;
+    --primary-color: #6528d3;
+    --primary-color-hover:#834de8;
+}
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #111111;
+    background-color: var(--dark-color);
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
     grid-template-areas: "header"

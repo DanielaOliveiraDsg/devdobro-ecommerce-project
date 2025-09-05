@@ -3,6 +3,8 @@
     --light-color: #ffffff;
     --primary-color: #6528d3;
     --primary-color-hover:#834de8;
+    --secundary-dark-color: #29272a;
+    --secundary-light-color: #ededed;
 }
 body{
     font-family: 'Roboto', sans-serif;

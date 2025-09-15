@@ -60,6 +60,7 @@
     justify-content: center;
     cursor: pointer;
     gap: 0.3rem;
+    background-color: transparent;
 }
 
 .menu-burger span{
@@ -91,7 +92,7 @@
     border-radius: 50%;
 }
 
-@media(min-width: 768px){
+@media(min-width: 940px){
     .header .menu-main{
         display: block;
         position: static;
@@ -109,12 +110,28 @@
     .menu-burger{
         display: none;
     }
+
+    .header .menu-main ul{
+        gap: 1rem;
+    }
+
+    .header ul li a{
+        font-size: 0.8rem;
+    }
 }
 
 @media (min-width: 1170px){
     .header{
         max-width: 1170px;
         margin: 0 auto;
+    }
+
+        .header .menu-main ul{
+        gap: 2rem;
+    }
+    
+    .header ul li a{
+        font-size: 1rem;
     }
     
 }

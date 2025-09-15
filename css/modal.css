@@ -1,0 +1,194 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+}
+
+.modal.is-open {
+    display: block;
+}
+
+.modal .container {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 1.5rem;
+    height: 100vh;
+}
+
+.modal header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal header .close {
+    background-image: url(../assets/images/icone_fechar.svg);
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.th-product,
+.th-total,
+.td-product,
+.td-total {
+    display: none;
+}
+
+tbody td {
+    padding: 0.8rem;
+    vertical-align: middle;
+    background-color: var(--secundary-dark-color);
+    color: var(--primary-light-color);
+    letter-spacing: 0.1rem;
+}
+
+thead th {
+    padding: 0.8rem;
+    letter-spacing: 0.1rem;
+}
+
+td.item-price {
+    color: var(--light-color);
+    font-size: 0.9rem;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+td.quantity input {
+    width: 48px;
+    padding: 4px;
+    background-color: transparent;
+    border: 1px solid var(--primary-light-color);
+    border-radius: 4px;
+    color: var(--secondary-light-color);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+td .delete {
+    display: block;
+    background-image: url(../assets/images/icone_deletar.svg);
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    margin: auto;
+}
+
+.container-total {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.total-cart {
+    background-color: var(--secundary-dark-color);
+    width: 100%;
+    padding: 1rem 0.5rem;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+.buy {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.buy:hover {
+    background-color: var(--primary-color-hover);
+}
+
+@media (min-width: 769px) {
+     .modal.is-open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(00, 00, 00, 0.9);
+    }
+
+    .modal .container {
+        max-width: 720px;
+        height: auto;
+        padding: 1.5rem;
+        margin: 0 auto;
+        border-radius: 8px;
+        background-color: var(--secundary-dark-color);
+    }
+
+    .modal .container th{
+        background-color: var(--dark-color);
+        border: 2px solid var(--dark-color);
+    }
+
+    tbody td {
+        border: 2px solid var(--dark-color);
+    }
+    
+    table{
+        border-collapse: collapse;
+        /* para tirar o gap entre as células*/
+    }
+
+    .th-product,
+    .th-total,
+    .td-product,
+    .td-total {
+        display: table-cell;
+        /* não pode usar block pois é uma tabela */
+    }
+
+    td img {
+        width: 48px;
+        height: auto;
+        border-radius: 4px;
+    }
+
+    .quantity {
+        text-align: center;
+    }
+    .td-total {
+        white-space: nowrap;
+        font-size: 1rem;
+        font-weight: 300;
+        color: var(--light-color);
+    }
+
+    .container-total{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .total-cart {
+        text-align: right;
+    }
+
+    .buy {
+        width: 369px;
+    }
+
+}

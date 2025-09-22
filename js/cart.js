@@ -93,7 +93,7 @@ function renderCartTable() {
             </td>
             <td class="td-total">R$ ${product.price.toFixed(2).replace('.', ',')}</td>
             <td>
-                <button class="delete" data-id="${product.id}" id="deletar"></button>
+                <button class="delete" data-id="${product.id}" id="delete"></button>
             </td>
         `;
         cartTableBody.appendChild(tr);
@@ -102,3 +102,24 @@ function renderCartTable() {
 }
 
 renderCartTable();
+
+//remover produtos do carrinho
+//pegar botão de deletar do html / ouvir o clique no botão de deletar
+
+const cartTableBody = document.querySelector('#modal-1-content tbody');
+cartTableBody.addEventListener('click', (event) => {
+    if(event.target.classList.contains('delete')) {
+        const id = event.target.dataset.id;
+        removeFromCart(id);
+    };
+});
+
+function removeFromCart(id) {
+    const products = getCartProducts();
+    
+    //filtrar o produto que não tem o id passado por parâmetro
+    const updatedProducts = products.filter(product => product.id !== id);
+    saveCartProducts(updatedProducts);
+    updateCartCounter();
+    renderCartTable();
+}

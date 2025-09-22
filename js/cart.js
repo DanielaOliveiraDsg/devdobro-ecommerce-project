@@ -49,6 +49,7 @@ addButtons.forEach(button => {
             cart.push(product);
         }
         saveCartProducts(cart);
+        updateCartCounter();
     });
 });
 
@@ -60,3 +61,17 @@ function getCartProducts() {
     const products = localStorage.getItem('cart');
     return products ? JSON.parse(products) : []; //retorna um array vazio se não houver produtos
 }
+
+//atualizar o contador do carrinho
+function updateCartCounter() {
+    const cart = getCartProducts();
+    let total = 0;
+    cart.forEach(product => {
+        total += product.quantity;
+    });
+
+    document.getElementById('cart-count').textContent = total;
+    
+}
+
+updateCartCounter();

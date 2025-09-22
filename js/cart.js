@@ -50,6 +50,7 @@ addButtons.forEach(button => {
         }
         saveCartProducts(cart);
         updateCartCounter();
+        renderCartTable();
     });
 });
 
@@ -64,14 +65,40 @@ function getCartProducts() {
 
 //atualizar o contador do carrinho
 function updateCartCounter() {
-    const cart = getCartProducts();
+    const products = getCartProducts();
     let total = 0;
-    cart.forEach(product => {
+    products.forEach(product => {
         total += product.quantity;
     });
 
     document.getElementById('cart-count').textContent = total;
-    
+
 }
 
 updateCartCounter();
+
+//renderizar a tabela do carrinho
+function renderCartTable() {
+    const products = getCartProducts();
+    const cartTableBody = document.querySelector('#modal-1-content tbody');
+    cartTableBody.innerHTML = ''; //limpar a tabela antes de renderizar
+    products.forEach(product => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td class="td-product"><img src="${product.image}" alt="${product.name}" width="50"></td>
+            <td>${product.name}</td>
+            <td class="item-price">R$ ${product.price.toFixed(2).replace('.', ',')}</td>
+            <td class="quantity">
+                <input type="number" value="${product.quantity}" min="1">
+            </td>
+            <td class="td-total">R$ ${product.price.toFixed(2).replace('.', ',')}</td>
+            <td>
+                <button class="delete" data-id="${product.id}" id="deletar"></button>
+            </td>
+        `;
+        cartTableBody.appendChild(tr);
+    });
+
+}
+
+renderCartTable();

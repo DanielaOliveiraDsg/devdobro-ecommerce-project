@@ -197,7 +197,18 @@
                         </tbody>
                     </table>
                     <div class="container-total">
-                        <span class="total-cart" id="cart-total">Total: R$ 0,00</span>
+                        <div class="container-shipping">
+                            <label for="zipcode">Calculate Shipping: </label>
+                            <div class="shipping-inputs">
+                                <input type="text" id="zipcode" name="zipcode" placeholder="Type your zip code">
+                                <button id="calculate-shipping">Calculate Shipping</button>
+                            </div>
+                        </div>
+                        <div class="container-total-price">
+                            <span id="subtotal">Order subtotal: <span class="sub-price">R$100,00</span></span>
+                            <span id="price-shipping">Shipping Price: <span></span></span>
+                            <span class="total-cart" id="cart-total">R$ 0,00</span>
+                        </div>
                         <button class="buy">Finalizar Compra</button>
                     </div>
                 </div>

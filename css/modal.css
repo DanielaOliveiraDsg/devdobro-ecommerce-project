@@ -101,12 +101,100 @@ td .delete {
     gap: 1rem;
 }
 
+.container-shipping {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 16px 0;
+}
+
+.shipping-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+#zipcode{
+    padding: 8px 12px;
+    width: 100%;
+    min-width: 220px;
+    border: 1px solid #6affb7;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #6affb7;
+    font-size: 1rem;
+    font-weight: 400;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+#zipcode::placeholder{
+    color: #6affb7;
+    opacity: 0.5;
+    font-weight: 400;
+}
+
+#zipcode:focus{
+    border-color: var(--primary-color-hover);
+}
+
+#calculate-shipping{
+    background-color: transparent;
+    color: #6affb7;
+    border: 1px solid #6affb7;
+    border-radius: 6px;
+    padding: 8px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    outline: none;
+}
+
+#calculate-shipping:hover,
+#calculate-shipping:focus{
+    background-color: #6affb7;
+    color: var(--dark-color);
+}
+
+.container-total-price{
+    display: flex ;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+    font-size: 1rem;
+}
+
+#subtotal, #price-shipping{
+    color: var(--secondary-light-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#price-shipping{
+    display: none;
+}
+
+#subtotal .sub-price, #price-shipping .ship-price {
+    color: #6affb7;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
 .total-cart {
     background-color: var(--secundary-dark-color);
     width: 100%;
     padding: 1rem 0.5rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     letter-spacing: 0.1rem;
+    color: #6affb7;
+    font-weight: bold;
+    margin-top: 8px;
+    display: block;
+    text-align: right;
 }
 
 .buy {

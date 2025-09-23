@@ -83,7 +83,7 @@ function renderCartTable() {
                 <td class="quantity">
                     <input type="number" class="input-quantity" data-id="${product.id}" value="${product.quantity}" min="1">
                 </td>
-                <td class="td-total">R$ ${(product.price * product.quantity).toFixed(2).replace('.', ',')}</td>
+                <td class="td-total">Total: R$ ${(product.price * product.quantity).toFixed(2).replace('.', ',')}</td>
             <td>
                 <button class="delete" data-id="${product.id}" id="delete"></button>
             </td>

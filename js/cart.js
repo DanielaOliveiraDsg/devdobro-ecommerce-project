@@ -83,7 +83,7 @@ function renderCartTable() {
                 <td class="quantity">
                     <input type="number" class="input-quantity" data-id="${product.id}" value="${product.quantity}" min="1">
                 </td>
-                <td class="td-total">Total: R$ ${(product.price * product.quantity).toFixed(2).replace('.', ',')}</td>
+                <td class="td-total">R$ ${(product.price * product.quantity).toFixed(2).replace('.', ',')}</td>
             <td>
                 <button class="delete" data-id="${product.id}" id="delete"></button>
             </td>
@@ -138,7 +138,7 @@ function updateCartTotal() {
     products.forEach(product => {
         total += product.price * product.quantity;
     });
-    document.querySelector('#cart-total').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+    document.querySelector('#cart-total').textContent = `Total: R$ ${total.toFixed(2).replace('.', ',')}`;
 }
 
 function updateCartAndTable() {
